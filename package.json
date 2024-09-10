@@ -13,7 +13,7 @@
         "ag-grid-react": "^31.3.2",
         "alpinejs": "^3.14",
         "autoprefixer": "^10.4.16",
-        "axios": "^1.7.4",
+        "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0",
         "leaflet": "^1.9",
         "lodash": "^4.17.21",
