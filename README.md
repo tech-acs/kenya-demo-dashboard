@@ -21,3 +21,9 @@ You will also need to add these two use statements to the top of the file
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 ```
+
+Lastly, you also need to publish the livewire assets
+
+```php
+php artisan vendor:publish --force --tag=livewire:assets
+```
