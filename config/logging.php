@@ -4,6 +4,7 @@ use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
+use Uneca\Chimera\Services\XRayLogFormatter;
 
 return [
 
@@ -125,6 +126,13 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+
+        'x-ray' => [
+            'driver' => 'single',
+            'tap' => [XRayLogFormatter::class],
+            'path' => env('XRAY_FILE', storage_path('logs/x-ray.log')),
+            'level' => 'debug',
         ],
 
     ],

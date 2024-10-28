@@ -24,10 +24,15 @@ return [
         ],
     ],
     'cache' => [
-        //'enabled' => env('CACHE_ENABLED', false),
         'ttl' => (int) env('CACHE_TTL_SECONDS', 60 * 5),
         'tags' => ['High priority', 'Medium priority', 'Low priority'],
     ],
     'long_query_time' => (int) env('LONG_QUERY_TIME', 10), // Seconds
     'featured_indicators_per_data_source' => env('FEATURED_INDICATORS_PER_DATA_SOURCE', 2),
+    'xray_file' => env('XRAY_FILE', storage_path('logs/x-ray.log')),
+    'progress_update_interval_seconds' => (int) env('PROGRESS_UPDATE_INTERVAL_SECONDS', 25),
+    'shapefile' => [
+        'import_chunk_size' => (int) env('SHAPEFILE_IMPORT_CHUNK_SIZE', 500),
+        'stop_import_if_orphans_found' => env('SHAPEFILE_STOP_IMPORT_IF_ORPHANS_FOUND', true),
+    ],
 ];
