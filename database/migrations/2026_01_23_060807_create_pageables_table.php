@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('pageables', function (Blueprint $table) {
             $table->id();
-            $table->jsonb('title');
-            $table->string('slug');
-            $table->jsonb('description')->nullable();
-            $table->boolean('published')->default(false);
-            $table->unsignedTinyInteger('rank')->nullable();
-            //$table->string('for')->default('indicators'); // indicators, reports & map indicators
+            $table->foreignId('page_id');
+            $table->foreignId('pageable_id');
+            $table->string('pageable_type');
+            $table->unsignedSmallInteger('rank')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('pageables');
     }
 };

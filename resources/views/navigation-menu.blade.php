@@ -22,16 +22,21 @@
                         </x-nav-link>
                     @endcan
                 @endforeach
-                @can('maps')
+                @if(settings('show_map_menu'))
                     <x-nav-link href="{{ route('map') }}" class="!text-base" :active="request()->routeIs('map')">
                         {{ __('Map') }}
                     </x-nav-link>
-                @endcan
-                @can('reports')
+                @endif
+                @if(settings('show_reports_menu'))
                     <x-nav-link href="{{ route('report') }}" class="!text-base" :active="request()->routeIs('report')">
                         {{ __('Reports') }}
                     </x-nav-link>
-                @endcan
+                @endif
+                @if(settings('show_area_insights_menu', true))
+                    <x-nav-link href="{{ route('area-insights') }}" class="!text-base" :active="request()->routeIs('area-insights', 'area-insights.show')">
+                        {{ __('Area Insights') }}
+                    </x-nav-link>
+                @endif
 
                     <livewire:command-palette />
                 </div>
@@ -39,7 +44,17 @@
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <div class="flex space-x-4">
-                    <x-dropdown align="right" width="96" contentClasses="py-0 bg-white overflow-hidden">
+
+                    @can('developer-mode')
+                        <div title="{{ __('Warning') }}"
+                             onclick="Livewire.dispatch('notify', {'content': 'You are in developer mode. If this is a production server, make sure to turn it off right away.', 'type': 'error'})"
+                             class="inline-flex relative items-center animate-ping flex-shrink-0 rounded-full p-1 cursor-pointer"
+                        >
+                            <x-chimera::icon.exclamation-triangle />
+                        </div>
+                    @endcan
+
+                    <x-dropdown align="right" contentClasses="py-0 bg-white overflow-hidden w-96">
                         <x-slot name="trigger">
                             <livewire:notification-bell />
                         </x-slot>
@@ -74,6 +89,7 @@
                                     <x-dropdown-link class="px-6" href="{{ route('page.index') }}">{{ __('Pages') }}</x-dropdown-link>
                                     <x-dropdown-link class="px-6" href="{{ route('indicator.index') }}">{{ __('Indicators') }}</x-dropdown-link>
                                     <x-dropdown-link class="px-6" href="{{ route('scorecard.index') }}">{{ __('Scorecards') }}</x-dropdown-link>
+                                    <x-dropdown-link class="px-6" href="{{ route('gauge.index') }}">{{ __('Gauges') }}</x-dropdown-link>
                                     <x-dropdown-link class="px-6" href="{{ route('manage.report.index') }}">{{ __('Reports') }}</x-dropdown-link>
                                     <x-dropdown-link class="px-6" href="{{ route('manage.map_indicator.index') }}">{{ __('Map Indicators') }}</x-dropdown-link>
                                     <div class="border-t border-gray-100"></div>
@@ -223,16 +239,16 @@
                     </x-responsive-nav-link>
                 @endcan
             @endforeach
-            @can('maps')
+            @if(settings('show_map_menu'))
                 <x-responsive-nav-link href="{{ route('map') }}" :active="request()->routeIs('map')">
                     {{ __('Map') }}
                 </x-responsive-nav-link>
-            @endcan
-            @can('reports')
+            @endif
+            @if(settings('show_reports_menu'))
                 <x-responsive-nav-link href="{{ route('report') }}" :active="request()->routeIs('report')">
                     {{ __('Reports') }}
                 </x-responsive-nav-link>
-            @endcan
+            @endif
             @can('Super User')
                 <div class="border-t border-gray-200"></div>
                 <x-responsive-nav-link href="{{ route('user.index') }}">{{ __('Users') }}</x-responsive-nav-link>
@@ -252,6 +268,7 @@
                 <x-responsive-nav-link href="{{ route('announcement.index') }}">{{ __('Announcements') }}</x-responsive-nav-link>
                 <x-responsive-nav-link href="{{ route('usage_stats') }}">{{ __('Usage Stats') }}</x-responsive-nav-link>
                 <x-responsive-nav-link href="{{ route('analytics.index') }}">{{ __('Query Analytics') }}</x-responsive-nav-link>
+                <x-responsive-nav-link href="{{ route('setting.edit') }}">{{ __('Settings') }}</x-responsive-nav-link>
             @endcan
         </div>
 

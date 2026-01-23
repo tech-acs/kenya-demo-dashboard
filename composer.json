@@ -9,22 +9,22 @@
         "ext-pgsql": "*",
         "ext-zip": "*",
         "gasparesganga/php-shapefile": "^3.4",
-        "laravel/framework": "^11.9",
+        "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.9",
+        "laravel/tinker": "^2.10",
         "livewire/livewire": "^3.0",
         "spatie/db-dumper": "^3.5",
         "spatie/laravel-permission": "^6.4",
         "spatie/laravel-translatable": "^6.1",
         "spatie/simple-excel": "^3.5",
-        "uneca/dashboard-starter-kit": "^4.8"
+        "uneca/dashboard-starter-kit": "^5.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.0",
+        "nunomaduro/collision": "^8.1",
         "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {

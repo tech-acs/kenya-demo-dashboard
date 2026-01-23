@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('inapplicables', function (Blueprint $table) {
             $table->id();
-            $table->jsonb('title');
-            $table->string('slug');
-            $table->jsonb('description')->nullable();
-            $table->boolean('published')->default(false);
-            $table->unsignedTinyInteger('rank')->nullable();
-            //$table->string('for')->default('indicators'); // indicators, reports & map indicators
+            $table->foreignId('area_hierarchy_id')->constrained();
+            $table->foreignId('inapplicable_id');
+            $table->string('inapplicable_type');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('inapplicables');
     }
 };
