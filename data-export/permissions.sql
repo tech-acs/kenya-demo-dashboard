@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 4VviS37oe9TOzfPJ5lNiIbvdeUIz509E080cbNoZnXTcMN3GTKLQMbGT2oxQsK2
+\restrict i0qdoKMkJtgv9kPMUSENgl4OOoYJQl7YXqsUu7OzqUT8pbC4rtac3FqQ2M5UFrY
 
 -- Dumped from database version 16.2 (Debian 16.2-1.pgdg110+2)
 -- Dumped by pg_dump version 16.12 (Ubuntu 16.12-1.pgdg22.04+1)
@@ -66,5 +66,5 @@ SELECT pg_catalog.setval('public.permissions_id_seq', 33, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 4VviS37oe9TOzfPJ5lNiIbvdeUIz509E080cbNoZnXTcMN3GTKLQMbGT2oxQsK2
+\unrestrict i0qdoKMkJtgv9kPMUSENgl4OOoYJQl7YXqsUu7OzqUT8pbC4rtac3FqQ2M5UFrY
 

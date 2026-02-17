@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict Xg5KysFkePCleBDk7qqQ2MpIoIau2QX6IGPXs65TkTMcJHd0BWV4jRtt2FdUBUp
+\restrict ioWfg0454Ncsd97gWUIc3vvuDD9mGzO9Jh94tZOqFqdE4BimY1q7JFnDmP3iB6D
 
 -- Dumped from database version 16.2 (Debian 16.2-1.pgdg110+2)
 -- Dumped by pg_dump version 16.12 (Ubuntu 16.12-1.pgdg22.04+1)
@@ -43,5 +43,5 @@ SELECT pg_catalog.setval('public.scorecards_id_seq', 8, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Xg5KysFkePCleBDk7qqQ2MpIoIau2QX6IGPXs65TkTMcJHd0BWV4jRtt2FdUBUp
+\unrestrict ioWfg0454Ncsd97gWUIc3vvuDD9mGzO9Jh94tZOqFqdE4BimY1q7JFnDmP3iB6D
 

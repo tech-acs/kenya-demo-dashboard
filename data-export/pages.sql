@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 8ibPALt9PiqJv3gdntTGhp4hZqN9w4jyi3b0a8LgaY4rPfkwyG51m7kxd6J6bG3
+\restrict sKezsvTmGq2CoORxcm5NkIPabCk7mVWb4lUXm6qXKBMgCtmPfyK9zyNkJwwDerO
 
 -- Dumped from database version 16.2 (Debian 16.2-1.pgdg110+2)
 -- Dumped by pg_dump version 16.12 (Ubuntu 16.12-1.pgdg22.04+1)
@@ -41,5 +41,5 @@ SELECT pg_catalog.setval('public.pages_id_seq', 6, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 8ibPALt9PiqJv3gdntTGhp4hZqN9w4jyi3b0a8LgaY4rPfkwyG51m7kxd6J6bG3
+\unrestrict sKezsvTmGq2CoORxcm5NkIPabCk7mVWb4lUXm6qXKBMgCtmPfyK9zyNkJwwDerO
 

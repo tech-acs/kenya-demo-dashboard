@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict WDxWMcsrcxvyW1atlxWmIsEblKrWxz6fCBV3DH4NF6POf9p7FZZzWugspC6SeZo
+\restrict JYtB14uIW4V6JnkeP34OVxh8p92SabgN3o3jCmrZyxmmdSo9QJtLJVOPzFBh2kJ
 
 -- Dumped from database version 16.2 (Debian 16.2-1.pgdg110+2)
 -- Dumped by pg_dump version 16.12 (Ubuntu 16.12-1.pgdg22.04+1)
@@ -36,5 +36,5 @@ SELECT pg_catalog.setval('public.map_indicators_id_seq', 1, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict WDxWMcsrcxvyW1atlxWmIsEblKrWxz6fCBV3DH4NF6POf9p7FZZzWugspC6SeZo
+\unrestrict JYtB14uIW4V6JnkeP34OVxh8p92SabgN3o3jCmrZyxmmdSo9QJtLJVOPzFBh2kJ
 
