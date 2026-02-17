@@ -2,8 +2,10 @@
 -- PostgreSQL database dump
 --
 
+\restrict 4VviS37oe9TOzfPJ5lNiIbvdeUIz509E080cbNoZnXTcMN3GTKLQMbGT2oxQsK2
+
 -- Dumped from database version 16.2 (Debian 16.2-1.pgdg110+2)
--- Dumped by pg_dump version 16.4 (Ubuntu 16.4-1.pgdg22.04+2)
+-- Dumped by pg_dump version 16.12 (Ubuntu 16.12-1.pgdg22.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -43,16 +45,26 @@ INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VA
 INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (23, 'households:population-distribution-by-broad-age-group:indicator', 'web', '2024-09-10 13:52:03', '2024-09-10 13:52:03') ON CONFLICT DO NOTHING;
 INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (24, 'map_indicators', 'web', '2024-10-14 07:03:28', '2024-10-14 07:03:28') ON CONFLICT DO NOTHING;
 INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (25, 'households:total-h-h:map-indicator', 'web', '2024-10-14 07:03:28', '2024-10-14 07:03:28') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (26, 'households-mapindicators', 'web', '2026-01-23 06:35:31', '2026-01-23 06:35:31') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (27, 'households-reports', 'web', '2026-01-23 06:35:40', '2026-01-23 06:35:40') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (28, 'indicators', 'web', '2026-01-28 07:28:27', '2026-01-28 07:28:27') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (29, 'maps', 'web', '2026-01-28 07:28:27', '2026-01-28 07:28:27') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (30, 'gauges', 'web', '2026-01-28 07:28:27', '2026-01-28 07:28:27') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (31, 'pages', 'web', '2026-01-28 07:28:27', '2026-01-28 07:28:27') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (32, 'some-page-indicators', 'web', '2026-01-29 10:58:01', '2026-01-29 10:58:01') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (33, 'households-indicators', 'web', '2026-01-29 11:02:10', '2026-01-29 11:02:10') ON CONFLICT DO NOTHING;
 
 
 --
 -- Name: permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.permissions_id_seq', 25, true);
+SELECT pg_catalog.setval('public.permissions_id_seq', 33, true);
 
 
 --
 -- PostgreSQL database dump complete
 --
+
+\unrestrict 4VviS37oe9TOzfPJ5lNiIbvdeUIz509E080cbNoZnXTcMN3GTKLQMbGT2oxQsK2
 
