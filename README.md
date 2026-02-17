@@ -22,6 +22,13 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 ```
 
+The following new route needs to go into the routes/web.php file
+```php
+use Illuminate\Support\Facades\Route;
+ 
+Route::post('/livewire/update', [\Livewire\Mechanisms\HandleRequests\HandleRequests::class, 'handleUpdate'])->middleware('web');
+```
+
 Lastly, you also need to publish the livewire assets
 
 ```php

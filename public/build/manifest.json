@@ -18,23 +18,15 @@
   "resources/css/app.css": {
     "file": "assets/app-Crl3LvIG.css",
     "src": "resources/css/app.css",
-    "isEntry": true,
-    "name": "app",
-    "names": [
-      "app.css"
-    ]
+    "isEntry": true
   },
   "resources/css/map.css": {
     "file": "assets/map-CulADNBV.css",
     "src": "resources/css/map.css",
-    "isEntry": true,
-    "name": "map",
-    "names": [
-      "map.css"
-    ]
+    "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-BlAHumKl.js",
+    "file": "assets/app-BusKmNcB.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -43,7 +35,7 @@
     ]
   },
   "resources/js/map.js": {
-    "file": "assets/map-BcIzikTd.js",
+    "file": "assets/map-C3sdS8om.js",
     "name": "map",
     "src": "resources/js/map.js",
     "isEntry": true,

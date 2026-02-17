@@ -13,6 +13,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10",
         "livewire/livewire": "^3.0",
+        "myclabs/deep-copy": "^1.13",
         "spatie/db-dumper": "^3.5",
         "spatie/laravel-permission": "^6.4",
         "spatie/laravel-translatable": "^6.1",
