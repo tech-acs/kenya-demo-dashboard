@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict i0qdoKMkJtgv9kPMUSENgl4OOoYJQl7YXqsUu7OzqUT8pbC4rtac3FqQ2M5UFrY
+\restrict RIljxU4jWaJwliACa0dNm0FzS5YkTajKMypJePSYg0NfgsejiO6zlKwFGC4qfJO
 
 -- Dumped from database version 16.2 (Debian 16.2-1.pgdg110+2)
 -- Dumped by pg_dump version 16.12 (Ubuntu 16.12-1.pgdg22.04+1)
@@ -51,20 +51,21 @@ INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VA
 INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (29, 'maps', 'web', '2026-01-28 07:28:27', '2026-01-28 07:28:27') ON CONFLICT DO NOTHING;
 INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (30, 'gauges', 'web', '2026-01-28 07:28:27', '2026-01-28 07:28:27') ON CONFLICT DO NOTHING;
 INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (31, 'pages', 'web', '2026-01-28 07:28:27', '2026-01-28 07:28:27') ON CONFLICT DO NOTHING;
-INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (32, 'some-page-indicators', 'web', '2026-01-29 10:58:01', '2026-01-29 10:58:01') ON CONFLICT DO NOTHING;
 INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (33, 'households-indicators', 'web', '2026-01-29 11:02:10', '2026-01-29 11:02:10') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (34, 'households:completion:gauge', 'web', '2026-02-17 12:15:28', '2026-02-17 12:15:28') ON CONFLICT DO NOTHING;
+INSERT INTO public.permissions (id, name, guard_name, created_at, updated_at) VALUES (35, 'households:overall-score:gauge', 'web', '2026-02-17 12:15:54', '2026-02-17 12:15:54') ON CONFLICT DO NOTHING;
 
 
 --
 -- Name: permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.permissions_id_seq', 33, true);
+SELECT pg_catalog.setval('public.permissions_id_seq', 35, true);
 
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict i0qdoKMkJtgv9kPMUSENgl4OOoYJQl7YXqsUu7OzqUT8pbC4rtac3FqQ2M5UFrY
+\unrestrict RIljxU4jWaJwliACa0dNm0FzS5YkTajKMypJePSYg0NfgsejiO6zlKwFGC4qfJO
 
