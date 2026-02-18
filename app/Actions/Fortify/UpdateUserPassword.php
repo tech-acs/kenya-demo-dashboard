@@ -18,6 +18,12 @@ class UpdateUserPassword implements UpdatesUserPasswords
      */
     public function update(User $user, array $input): void
     {
+        if ($user->email === env('GUEST_ACCOUNT', 'guest@example.com')) {
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'current_password' => ['Making changes in the demo version is not permitted.'],
+            ]);
+        }
+
         Validator::make($input, [
             'current_password' => ['required', 'string', 'current_password:web'],
             'password' => $this->passwordRules(),

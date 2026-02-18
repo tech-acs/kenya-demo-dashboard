@@ -17,6 +17,12 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
      */
     public function update(User $user, array $input): void
     {
+        if ($user->email === env('GUEST_ACCOUNT', 'guest@example.com')) {
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'name' => ['Making changes in the demo version is not permitted.'],
+            ]);
+        }
+
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],

@@ -12,6 +12,10 @@
             </div>
         @endsession
 
+        <form id="guest-login-form" method="POST" action="{{ route('login.demo') }}">
+            @csrf
+        </form>
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -42,6 +46,10 @@
                 <x-button class="ms-4">
                     {{ __('Log in') }}
                 </x-button>
+
+                <x-secondary-button type="submit" form="guest-login-form" class="ml-2">
+                    {{ __('Demo') }}
+                </x-secondary-button>
             </div>
         </form>
     </x-authentication-card>
