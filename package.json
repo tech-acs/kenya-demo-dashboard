@@ -16,7 +16,7 @@
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0",
         "leaflet": "^1.9",
-        "lodash": "^4.17.21",
+        "lodash": "^4.18.1",
         "plotly.js-dist": "^2.30",
         "plotly.js-locales": "^2.30",
         "postcss": "^8.4.32",
