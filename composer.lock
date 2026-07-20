@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8cccf3b7a301124b51fc529c810bc5d",
+    "content-hash": "4642a7f6fd26a3cfd2e4b8f812f946dc",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -730,6 +730,58 @@
                 }
             ],
             "time": "2025-12-03T09:33:47+00:00"
+        },
+        {
+            "name": "gasparesganga/php-shapefile",
+            "version": "v3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gasparesganga/php-shapefile.git",
+                "reference": "7285fdb3302655f421ff39b690514f884788ebdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gasparesganga/php-shapefile/zipball/7285fdb3302655f421ff39b690514f884788ebdc",
+                "reference": "7285fdb3302655f421ff39b690514f884788ebdc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shapefile\\": "src/Shapefile/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gaspare Sganga",
+                    "email": "contact@gasparesganga.com",
+                    "homepage": "https://gasparesganga.com/labs/php-shapefile/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP library to read and write ESRI Shapefiles, compatible with WKT and GeoJSON",
+            "homepage": "https://gasparesganga.com/labs/php-shapefile/",
+            "keywords": [
+                "ESRI",
+                "Shapefile",
+                "dbf",
+                "geojson",
+                "shape",
+                "shp",
+                "wkt"
+            ],
+            "support": {
+                "issues": "https://github.com/gasparesganga/php-shapefile/issues",
+                "source": "https://github.com/gasparesganga/php-shapefile/tree/v3.4.1"
+            },
+            "time": "2023-08-29T12:06:50+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -1767,6 +1819,69 @@
                 "source": "https://github.com/laravel/prompts/tree/v0.3.21"
             },
             "time": "2026-06-26T00:11:25+00:00"
+        },
+        {
+            "name": "laravel/sanctum",
+            "version": "v4.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sanctum.git",
+                "reference": "2a9bccc18e9907808e0018dd15fa643937886b1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/2a9bccc18e9907808e0018dd15fa643937886b1e",
+                "reference": "2a9bccc18e9907808e0018dd15fa643937886b1e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/console": "^11.0|^12.0|^13.0",
+                "illuminate/contracts": "^11.0|^12.0|^13.0",
+                "illuminate/database": "^11.0|^12.0|^13.0",
+                "illuminate/support": "^11.0|^12.0|^13.0",
+                "php": "^8.2",
+                "symfony/console": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^9.15|^10.8|^11.0",
+                "phpstan/phpstan": "^1.10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Sanctum\\SanctumServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Sanctum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel Sanctum provides a featherweight authentication system for SPAs and simple APIs.",
+            "keywords": [
+                "auth",
+                "laravel",
+                "sanctum"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/sanctum/issues",
+                "source": "https://github.com/laravel/sanctum"
+            },
+            "time": "2026-04-30T11:46:25+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -3249,6 +3364,99 @@
             "time": "2026-06-11T08:50:37+00:00"
         },
         {
+            "name": "openspout/openspout",
+            "version": "v4.32.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/openspout/openspout.git",
+                "reference": "41f045c1f632e1474e15d4c7bc3abcb4a153563d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/41f045c1f632e1474e15d4c7bc3abcb4a153563d",
+                "reference": "41f045c1f632e1474e15d4c7bc3abcb4a153563d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-filter": "*",
+                "ext-libxml": "*",
+                "ext-xmlreader": "*",
+                "ext-zip": "*",
+                "php": "~8.3.0 || ~8.4.0 || ~8.5.0"
+            },
+            "require-dev": {
+                "ext-zlib": "*",
+                "friendsofphp/php-cs-fixer": "^3.86.0",
+                "infection/infection": "^0.31.2",
+                "phpbench/phpbench": "^1.4.1",
+                "phpstan/phpstan": "^2.1.22",
+                "phpstan/phpstan-phpunit": "^2.0.7",
+                "phpstan/phpstan-strict-rules": "^2.0.6",
+                "phpunit/phpunit": "^12.3.7"
+            },
+            "suggest": {
+                "ext-iconv": "To handle non UTF-8 CSV files (if \"php-mbstring\" is not already installed or is too limited)",
+                "ext-mbstring": "To handle non UTF-8 CSV files (if \"iconv\" is not already installed)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OpenSpout\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrien Loison",
+                    "email": "adrien@box.com"
+                }
+            ],
+            "description": "PHP Library to read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way",
+            "homepage": "https://github.com/openspout/openspout",
+            "keywords": [
+                "OOXML",
+                "csv",
+                "excel",
+                "memory",
+                "odf",
+                "ods",
+                "office",
+                "open",
+                "php",
+                "read",
+                "scale",
+                "spreadsheet",
+                "stream",
+                "write",
+                "xlsx"
+            ],
+            "support": {
+                "issues": "https://github.com/openspout/openspout/issues",
+                "source": "https://github.com/openspout/openspout/tree/v4.32.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/filippotessarotto",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Slamdunk",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-09-03T16:03:54+00:00"
+        },
+        {
             "name": "paragonie/constant_time_encoding",
             "version": "v3.1.3",
             "source": {
@@ -4357,6 +4565,70 @@
             "time": "2026-06-18T03:57:49+00:00"
         },
         {
+            "name": "spatie/db-dumper",
+            "version": "4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/db-dumper.git",
+                "reference": "f8f2785574de84aa4642a4df8b59a6dd578dd5d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/f8f2785574de84aa4642a4df8b59a6dd578dd5d3",
+                "reference": "f8f2785574de84aa4642a4df8b59a6dd578dd5d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3",
+                "symfony/process": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^4.0",
+                "phpstan/phpstan": "^2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\DbDumper\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Dump databases",
+            "homepage": "https://github.com/spatie/db-dumper",
+            "keywords": [
+                "database",
+                "db-dumper",
+                "dump",
+                "mysqldump",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/db-dumper/tree/4.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-05-04T11:43:33+00:00"
+        },
+        {
             "name": "spatie/laravel-package-tools",
             "version": "1.93.1",
             "source": {
@@ -4416,6 +4688,94 @@
                 }
             ],
             "time": "2026-05-19T14:06:37+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "8.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "60e8ed5b2fbf043c2264433fc2680c76b8b66aa6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/60e8ed5b2fbf043c2264433fc2680c76b8b66aa6",
+                "reference": "60e8ed5b2fbf043c2264433fc2680c76b8b66aa6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^12.0|^13.0",
+                "illuminate/container": "^12.0|^13.0",
+                "illuminate/contracts": "^12.0|^13.0",
+                "illuminate/database": "^12.0|^13.0",
+                "php": "^8.3",
+                "spatie/laravel-package-tools": "^1.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.9",
+                "laravel/octane": "^2.0",
+                "laravel/passport": "^13.0",
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^10.0|^11.0",
+                "pestphp/pest": "^3.0|^4.0",
+                "pestphp/pest-plugin-laravel": "^3.0|^4.1",
+                "phpstan/phpstan": "^2.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "8.x-dev",
+                    "dev-master": "8.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 12 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/8.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-07-03T15:36:01+00:00"
         },
         {
             "name": "spatie/laravel-translatable",
@@ -4499,6 +4859,66 @@
                 }
             ],
             "time": "2026-04-23T08:26:29+00:00"
+        },
+        {
+            "name": "spatie/simple-excel",
+            "version": "3.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/simple-excel.git",
+                "reference": "2aa4cd9da6f29a23e4f7b6f4c6944dce204ea47a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/2aa4cd9da6f29a23e4f7b6f4c6944dce204ea47a",
+                "reference": "2aa4cd9da6f29a23e4f7b6f4c6944dce204ea47a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0|^10.0|^11.0|^12.0|^13.0",
+                "openspout/openspout": "^4.30",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.4|^10.5|^11.0|^12.0",
+                "spatie/pest-plugin-snapshots": "^1.1|^2.1",
+                "spatie/phpunit-snapshot-assertions": "^4.0|^5.1",
+                "spatie/temporary-directory": "^1.2|^2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\SimpleExcel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Read and write simple Excel and CSV files",
+            "homepage": "https://github.com/spatie/simple-excel",
+            "keywords": [
+                "simple-excel",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/simple-excel/tree/3.10.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-06-15T06:21:16+00:00"
         },
         {
             "name": "spomky-labs/cbor-php",
@@ -7638,6 +8058,76 @@
             "time": "2026-07-16T09:06:53+00:00"
         },
         {
+            "name": "uneca/plotly-chart-editor",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tech-acs/plotly-chart-editor.git",
+                "reference": "d11bea8d4ecc072e265ddc254426e50035e8f974"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tech-acs/plotly-chart-editor/zipball/d11bea8d4ecc072e265ddc254426e50035e8f974",
+                "reference": "d11bea8d4ecc072e265ddc254426e50035e8f974",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^12.0 || ^13.0",
+                "livewire/livewire": "^3.0 || ^4.0",
+                "php": "^8.3",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "laravel/boost": "^2.0",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8.8",
+                "orchestra/testbench": "^11.0",
+                "pestphp/pest": "^4.0",
+                "pestphp/pest-plugin-arch": "^4.0",
+                "pestphp/pest-plugin-laravel": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": [],
+                    "providers": [
+                        "Uneca\\PlotlyChartEditor\\PlotlyChartEditorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Uneca\\PlotlyChartEditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "UNECA",
+                    "email": "tamerat@un.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A reactive visual Plotly chart builder package for Laravel/Livewire.",
+            "homepage": "https://github.com/uneca/plotly-chart-editor",
+            "keywords": [
+                "chart",
+                "laravel",
+                "livewire",
+                "plotly",
+                "plotly-chart-editor",
+                "uneca"
+            ],
+            "support": {
+                "issues": "https://github.com/tech-acs/plotly-chart-editor/issues",
+                "source": "https://github.com/tech-acs/plotly-chart-editor/tree/v1.4.0"
+            },
+            "time": "2026-06-25T15:18:47+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.6.4",
             "source": {
@@ -10310,7 +10800,9 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.3"
+        "php": "^8.3",
+        "ext-pgsql": "*",
+        "ext-zip": "*"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"

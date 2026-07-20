@@ -4,6 +4,7 @@ use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
+use Uneca\Chimera\Services\XRayLogFormatter;
 
 return [
 
@@ -54,7 +55,7 @@ return [
 
         'stack' => [
             'driver' => 'stack',
-            'channels' => explode(',', (string) env('LOG_STACK', 'single')),
+            'channels' => explode(',', env('LOG_STACK', 'single')),
             'ignore_exceptions' => false,
         ],
 
@@ -76,7 +77,7 @@ return [
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => env('LOG_SLACK_USERNAME', env('APP_NAME', 'Laravel')),
+            'username' => env('LOG_SLACK_USERNAME', 'Laravel Log'),
             'emoji' => env('LOG_SLACK_EMOJI', ':boom:'),
             'level' => env('LOG_LEVEL', 'critical'),
             'replace_placeholders' => true,
@@ -98,10 +99,10 @@ return [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
-            'handler_with' => [
+            'formatter' => env('LOG_STDERR_FORMATTER'),
+            'with' => [
                 'stream' => 'php://stderr',
             ],
-            'formatter' => env('LOG_STDERR_FORMATTER'),
             'processors' => [PsrLogMessageProcessor::class],
         ],
 
@@ -125,6 +126,13 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+
+        'x-ray' => [
+            'driver' => 'single',
+            'tap' => [XRayLogFormatter::class],
+            'path' => env('XRAY_FILE', storage_path('logs/x-ray.log')),
+            'level' => 'debug',
         ],
 
     ],

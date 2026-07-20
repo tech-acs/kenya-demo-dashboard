@@ -1,0 +1,30 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Support\Number;
+use Illuminate\Support\Collection;
+use Uneca\Chimera\Livewire\GaugeComponent;
+use Uneca\Chimera\Services\BreakoutQueryBuilder;
+
+class {{ class }} extends GaugeComponent
+{
+    /**
+     * Override-able base class defaults.
+     *
+     * Uncomment any property below and set a different value to override the
+     * base class default.
+     */
+    // public string $unit = '%';
+    // public array $colorThresholds = [70 => 'text-red-500', 90 => 'text-amber-500', 101 => 'text-green-500'];
+    // public int $outOf = 100;
+
+    public function getData(string $filterPath): Collection
+    {
+        try {
+            // TODO: Implement getData() method.
+        } catch (\Exception $exception) {
+            return collect();
+        }
+    }
+}
