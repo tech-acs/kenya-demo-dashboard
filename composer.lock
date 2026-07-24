@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f75d378b3df53b33d53d27f7e3f8678d",
+    "content-hash": "dcef6cf88143e8f9c385a0d720ced50f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -7984,16 +7984,16 @@
         },
         {
             "name": "uneca/dashboard-starter-kit",
-            "version": "7.3.2",
+            "version": "dev-demo-mode",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tech-acs/dashboard-starter-kit.git",
-                "reference": "4c69078ef11b7698d27320fbadea8be1e71869ef"
+                "reference": "89a50d489fd9ef0692f85975907342abfe309f27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tech-acs/dashboard-starter-kit/zipball/4c69078ef11b7698d27320fbadea8be1e71869ef",
-                "reference": "4c69078ef11b7698d27320fbadea8be1e71869ef",
+                "url": "https://api.github.com/repos/tech-acs/dashboard-starter-kit/zipball/89a50d489fd9ef0692f85975907342abfe309f27",
+                "reference": "89a50d489fd9ef0692f85975907342abfe309f27",
                 "shasum": ""
             },
             "require": {
@@ -8021,19 +8021,59 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Uneca\\Chimera\\ChimeraServiceProvider"
+                        "Uneca\\Chimera\\ChimeraServiceProvider",
+                        "Uneca\\Chimera\\DemoServiceProvider"
                     ]
                 }
             },
             "autoload": {
-                "files": [
-                    "src/Services/Helpers.php"
-                ],
                 "psr-4": {
                     "Uneca\\Chimera\\": "src"
+                },
+                "files": [
+                    "src/Services/Helpers.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Uneca\\Chimera\\Tests\\": "tests/",
+                    "Workbench\\App\\": "workbench/app/",
+                    "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+                    "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest --no-coverage"
+                ],
+                "test-coverage": [
+                    "vendor/bin/pest coverage"
+                ],
+                "post-autoload-dump": [
+                    "@clear",
+                    "@prepare"
+                ],
+                "clear": [
+                    "@php vendor/bin/testbench package:purge-skeleton --ansi"
+                ],
+                "prepare": [
+                    "@php vendor/bin/testbench package:discover --ansi"
+                ],
+                "build": [
+                    "@php vendor/bin/testbench workbench:build --ansi"
+                ],
+                "serve": [
+                    "Composer\\Config::disableProcessTimeout",
+                    "@build",
+                    "@php vendor/bin/testbench serve --ansi"
+                ],
+                "lint": [
+                    "@php vendor/bin/pint --ansi"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -8052,10 +8092,10 @@
                 "uneca"
             ],
             "support": {
-                "issues": "https://github.com/tech-acs/dashboard-starter-kit/issues",
-                "source": "https://github.com/tech-acs/dashboard-starter-kit/tree/7.3.2"
+                "source": "https://github.com/tech-acs/dashboard-starter-kit/tree/demo-mode",
+                "issues": "https://github.com/tech-acs/dashboard-starter-kit/issues"
             },
-            "time": "2026-07-22T09:36:26+00:00"
+            "time": "2026-07-24T07:21:26+00:00"
         },
         {
             "name": "uneca/plotly-chart-editor",
@@ -10796,7 +10836,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "uneca/dashboard-starter-kit": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
