@@ -18,8 +18,6 @@ class HouseholdSizeVsElderlyDependency extends Chart
     // public bool $useDynamicAreaXAxisTitles = true;
     // public array $aggregateAppendedTraces = []; /* ['trace name' => 'avg'] ... sum, count, min, max, mode, median */
 
-    public bool $useDynamicAreaXAxisTitles = true;
-
     public function getData(string $filterPath): Collection
     {
         try {
