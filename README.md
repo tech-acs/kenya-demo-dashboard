@@ -1,58 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Deployment
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+### 1. Clone repository
+```
+git clone https://github.com/tech-acs/kenya-demo-dashboard
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install dependencies
+```
+composer install
+```
 
-## Contributing
+### 3. Set environment variables
+Add to .env:
+```
+CHIMERA_DEMO=true
+DEMO_ACCOUNT=demo@example.com
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+DB_DATABASE=demo-dashboard
+```
+If your app uses database-backed SESSION_DRIVER, CACHE_STORE, or QUEUE_CONNECTION, switch them to file-based or disabled:
 
-## Code of Conduct
+```
+SESSION_DRIVER=file
+CACHE_STORE=file
+QUEUE_CONNECTION=sync or redis
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Seed the demo user
+Run before switching to the read-only DB credentials:
+```
+php artisan chimera:demo-setup
+```
+This creates a user demo@example.com with the Super Admin role and a random password (not needed for login).
 
-## Security Vulnerabilities
+What the command does:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Creates or finds a user by DEMO_ACCOUNT email
+- Creates or finds the Super Admin role
+- Assigns that role to the user
+- Warns if session/cache/queue use database drivers
 
-## License
+### 5. Create a read-only PostgreSQL role
+Connect as a superuser (postgres) and run:
+```
+CREATE ROLE demo_db_user WITH LOGIN PASSWORD 'a-strong-password';
+GRANT CONNECT ON DATABASE demo-dashboard TO demo_db_user;
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-- Grant SELECT on all existing tables
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO demo_db_user;
+
+-- Ensure future tables also get SELECT
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO demo_db_user;
+```
+
+### 6. Switch to read-only database user
+```
+DB_USERNAME=demo_db_user
+DB_PASSWORD=a-strong-password
+```
